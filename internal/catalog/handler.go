@@ -9,18 +9,18 @@ import (
 	"shop/internal/structures"
 )
 
-type service interface {
+type CatalogService interface {
 	// CreateProduct(ctx context.Context, product structures.Product) (int64, error)
 	// GetProduct(ctx context.Context, id int) (structures.Product, error)
 	// GetProducts(ctx context.Context) ([]structures.Product, error)
 }
 
 type Handler struct {
-	service  service
+	service  CatalogService
 	products map[int64]structures.Product
 }
 
-func New(service service) *Handler {
+func New(service CatalogService) *Handler {
 	return &Handler{
 		service: service,
 		products: map[int64]structures.Product{

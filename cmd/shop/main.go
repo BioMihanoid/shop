@@ -31,7 +31,7 @@ func main() {
 	log.Println("Server shutdown gracefully.")
 }
 
-func InitRoutes(catalogService *catalog.Service) *http.ServeMux {
+func InitRoutes(catalogService *catalog.CatalogService) *http.ServeMux {
 	mux := http.NewServeMux()
 
 	// MAIN HANDLER
